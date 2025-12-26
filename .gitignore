@@ -1,0 +1,10 @@
+# Ignorar arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de backup ou autosave do CoppeliaSim
+*.ttt.backup
+*.ttt.autosave
+
+# Ignorar configurações locais do VS Code (opcional)
+.vscode/
