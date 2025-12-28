@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="xyzRobot">
+    <link name="base">
+        <inertial>
+            <origin xyz="1.0019805717196197 0.5482148756181827 0.6990358370739002" rpy="0.0 0.0 0.0" />
+            <mass value="232.08708264134552" />
+            <inertia ixx="53.771039070637116" iyy="165.47416661662493" izz="166.67602357463159" ixy="0.017115787921939397" iyz="-0.34492251172159305" ixz="-0.0017829666032329102" />
+        </inertial>
+        <visual name="base_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="eixoY">
+        <inertial>
+            <origin xyz="0.4060404340387578 0.5244120549871636 -0.09288610371215256" rpy="1.0947644252537636e-47 -0.0 0.0" />
+            <mass value="13.830381306005401" />
+            <inertia ixx="2.9193671992233803" iyy="2.6574928595181992" izz="5.433723795128172" ixy="0.0037911296409589563" iyz="0.00047048627322787684" ixz="-0.30084064499038016" />
+        </inertial>
+        <visual name="eixoY_visual">
+            <origin xyz="-0.9269999988429695 -0.3612327221578232 1.0336182798923392" rpy="-9.213916994366027e-16 1.5707963267948943 0" />
+            <geometry>
+                <mesh filename="meshes/eixoY.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="eixoY_collision">
+            <origin xyz="-0.9269999988429695 -0.3612327221578232 1.0336182798923392" rpy="-9.213916994366027e-16 1.5707963267948943 0" />
+            <geometry>
+                <mesh filename="meshes/eixoY.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="eixoX-v2">
+        <inertial>
+            <origin xyz="0.031961418696825776 -0.1266569270360526 0.094011061907635" rpy="0.0 -0.0 0.0" />
+            <mass value="1.4549802318089322" />
+            <inertia ixx="0.06502074838557625" iyy="0.0016130575627411048" izz="0.06453267423902531" ixy="0.00011272892626923436" iyz="-1.0111570789733259e-06" ixz="2.987292889064413e-08" />
+        </inertial>
+        <visual name="eixoX-v2_visual">
+            <origin xyz="1.198618281597412 -1.9569858088429868 -0.4478545644014216" rpy="1.5707963267948937 1.6049661599737403e-14 -3.141592653589791" />
+            <geometry>
+                <mesh filename="meshes/eixoX-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="eixoX-v2_collision">
+            <origin xyz="1.198618281597412 -1.9569858088429868 -0.4478545644014216" rpy="1.5707963267948937 1.6049661599737403e-14 -3.141592653589791" />
+            <geometry>
+                <mesh filename="meshes/eixoX-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="eixoZ-v2">
+        <inertial>
+            <origin xyz="0.007231592786932453 -2.5897172406530443e-09 0.3307391563302349" rpy="0.0 -0.0 0.0" />
+            <mass value="0.3253389326403298" />
+            <inertia ixx="0.011224791381171384" iyy="0.011250628548805652" izz="0.00016015358491072718" ixy="-1.1857181902996672e-13" iyz="-6.260547635861258e-12" ixz="0.0002491754925189049" />
+        </inertial>
+        <visual name="eixoZ-v2_visual">
+            <origin xyz="1.1158682812506207 0.5418545656567351 -1.4096007248743978" rpy="3.237241125936945e-15 4.529588311450475e-15 3.1415926535897727" />
+            <geometry>
+                <mesh filename="meshes/eixoZ-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="eixoZ-v2_collision">
+            <origin xyz="1.1158682812506207 0.5418545656567351 -1.4096007248743978" rpy="3.237241125936945e-15 4.529588311450475e-15 3.1415926535897727" />
+            <geometry>
+                <mesh filename="meshes/eixoZ-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="eixoY" type="prismatic">
+        <origin xyz="0.001999999147485312 0.026999995107049878 0.9269999988429788" rpy="-6.106226635438337e-16 -1.5707963267948932 0" />
+        <parent link="base" />
+        <child link="eixoY" />
+        <axis xyz="7.888609052210118e-31 -7.547490628539741e-32 0.9999999999999999" />
+        <limit lower="-1.68" upper="0.0" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="eixoX" type="prismatic">
+        <origin xyz="1.0299858100000001 1.0649997199999999 -0.085" rpy="1.5707963267948963 1.5707963267948966 0" />
+        <parent link="eixoY" />
+        <child link="eixoX-v2" />
+        <axis xyz="-9.450718910749881e-32 -2.631639762074445e-16 1.0" />
+        <limit lower="0.0" upper="0.89" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="eixoZ" type="prismatic">
+        <origin xyz="0.08259920000000051 -0.4194999999999999 0.0941886599999998" rpy="-1.5707963267948963 -5.500804313589949e-31 3.9443045261050577e-31" />
+        <parent link="eixoX-v2" />
+        <child link="eixoZ-v2" />
+        <axis xyz="3.944304526105059e-31 0.0 1.0" />
+        <limit lower="-0.495" upper="-0.05" effort="1000000" velocity="1000000" />
+    </joint>
+</robot>
